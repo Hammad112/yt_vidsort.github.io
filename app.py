@@ -12,9 +12,9 @@ import re
 nltk.download('wordnet')
 #nltk.download('punkt')
 
-# Load the trained model and TF-IDF vectorizer
-model = joblib.load('logistic_regression_model.pkl')
-tfidf = joblib.load('tfidf_vectorizer.pkl')
+import pickle
+tfidf = pickle.load(open('tfidf_vectorizer.pkl', 'rb'))
+model = pickle.load(open('logistic_regression_model.pkl', 'rb'))
 
 # Text Preprocessing Functions
 def clean_txt_func1(text):
