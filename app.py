@@ -6,11 +6,11 @@ from nltk.tokenize import word_tokenize
 #from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer, RegexpStemmer
 import re
-#import string
-#from string import punctuation
+import string
+from string import punctuation
 
 nltk.download('wordnet')
-#nltk.download('punkt')
+nltk.download('punkt')
 
 model = joblib.load('logistic_regression_model.pkl')
 tfidf = joblib.load('tfidf_vectorizer.pkl')
