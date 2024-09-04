@@ -1,5 +1,5 @@
 import streamlit as st
-#import joblib
+import joblib
 import numpy as np
 import nltk
 from nltk.tokenize import word_tokenize
@@ -12,10 +12,8 @@ import re
 nltk.download('wordnet')
 #nltk.download('punkt')
 
-import pickle
-tfidf = pickle.load(open('tfidf_vectorizer.pkl', 'rb'))
-model = pickle.load(open('logistic_regression_model.pkl', 'rb'))
-
+model = joblib.load('logistic_regression_model.pkl')
+tfidf = joblib.load('tfidf_vectorizer.pkl')
 # Text Preprocessing Functions
 def clean_txt_func1(text):
     text = text.lower()
